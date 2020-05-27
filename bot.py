@@ -56,7 +56,7 @@ def human_size(bytes, units=[' bytes','KB','MB','GB','TB', 'PB']):
 def upload_video(client, message,file_path):
     file_path_thumb="downloads/"+str(message.chat.id)+".jpeg"
     if not os.path.exists(file_path_thumb):
-        file_path_thumb="https://i.postimg.cc/tg07TF5G/Logo-2.png"
+        file_path_thumb="Logo-2.png"
     prev_message=app.send_message(
         text="Sabar sat nak upload.....",
         chat_id=message.chat.id,
