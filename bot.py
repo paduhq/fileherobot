@@ -29,8 +29,8 @@ def download_link(link,file_name,prev_message):
 
 def msg_handler_f(client, message):
         msg_txt=message.text
-        txt_pattern="[FILE_LINK]|[FILE_NAME_WITH_EXTENSION]"
-        txt_to_send="Format link macam ni :- \n"+txt_pattern
+        txt_pattern="You are not authorized to use the bot!"
+        txt_to_send="hello! \n"+txt_pattern
         if "http" in msg_txt and '|' in msg_txt :
             prev_message=app.send_message(
                 text="Mantul woi, download jap ... ",
@@ -58,7 +58,7 @@ def upload_video(client, message,file_path):
     if not os.path.exists(file_path_thumb):
         file_path_thumb="Logo(2).png"
     prev_message=app.send_message(
-        text="Sabar sat nak upload.....",
+        text="Sabaq sat nak upload.....",
         chat_id=message.chat.id,
         reply_to_message_id=message.message_id
     )
@@ -111,9 +111,7 @@ def progress_bar_f(current,total,prev_message,time1,direction):
         )
 
 def start_msg_handler_f(client,message):
-    msg="Halo bosskur! \n"
-    msg=msg+"> Video(direct link) ke streamable video \n"
-    msg=msg+"> Direct link ke file Telegram. \nFormat : [FILE_LINK]|[FILE_NAME_WITH_EXTENSION] \nContoh : http://direct-link.com/example-file.apk|new-name.apk"
+    msg="You are not authorized to use the bot!"
     message.reply_text(msg)
 
 def button(bot, update):
@@ -146,13 +144,13 @@ def img_handler_f(client,message):
     inline_keyboard = []
     inline_keyboard.append([
         pyrogram.InlineKeyboardButton(
-            text="Set Thumbnail",
+            text="Set Thumbnail boss!",
             callback_data="y|"+dst
         )
     ])
     reply_markup = pyrogram.InlineKeyboardMarkup(inline_keyboard)
     message.reply_text(
-        "Want to Set This as Thumbnail..",
+        "Set as thumbnail..?",
         quote=True,
         reply_markup=reply_markup
     )
