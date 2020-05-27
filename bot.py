@@ -29,11 +29,11 @@ def download_link(link,file_name,prev_message):
 
 def msg_handler_f(client, message):
         msg_txt=message.text
-        txt_pattern="[FILE_LINK] | [FILE_NAME_WITH_EXTENSION]"
-        txt_to_send="Send Me Link in this Pattern :- \n"+txt_pattern
-        if "http" in msg_txt and ' | ' in msg_txt :
+        txt_pattern="[FILE_LINK]|[FILE_NAME_WITH_EXTENSION]"
+        txt_to_send="FOrmat link macam ni :- \n"+txt_pattern
+        if "http" in msg_txt and '|' in msg_txt :
             prev_message=app.send_message(
-                text="Starting Download file .. ",
+                text="Mantul woi, download jap .. ",
                 chat_id=message.chat.id,
                 reply_to_message_id=message.message_id
             )
@@ -56,9 +56,9 @@ def human_size(bytes, units=[' bytes','KB','MB','GB','TB', 'PB']):
 def upload_video(client, message,file_path):
     file_path_thumb="downloads/"+str(message.chat.id)+".jpeg"
     if not os.path.exists(file_path_thumb):
-        file_path_thumb="downloads/demo.jpeg"
+        file_path_thumb="https://i.postimg.cc/tg07TF5G/Logo-2.png"
     prev_message=app.send_message(
-        text="Starting Upload.....",
+        text="Sabar sat nak upload.....",
         chat_id=message.chat.id,
         reply_to_message_id=message.message_id
     )
@@ -68,7 +68,7 @@ def upload_video(client, message,file_path):
         chat_id=message.chat.id,
         video=file_path,
         reply_to_message_id=message.message_id,
-        caption="Uploaded by @fileherobot",
+        caption="Powered by @LutfiHamka of @PaduHQ",
         progress=progress_bar_f,
         progress_args=(prev_message,time1,direction),
         thumb=file_path_thumb
@@ -111,9 +111,9 @@ def progress_bar_f(current,total,prev_message,time1,direction):
         )
 
 def start_msg_handler_f(client,message):
-    msg="hii.. I am FileHerobot \n"
-    msg=msg+"> Can send Send Video \n"
-    msg=msg+"> Can Send Files to telegram using Direct Links"
+    msg="Halo bosskur! \n"
+    msg=msg+"> Video(direct link) ke streamable video \n"
+    msg=msg+"> Direct link ke file Telegram. \n Format : [FILE_LINK]|[FILE_NAME_WITH_EXTENSION] \nContoh : http://direct-link.com/example-file.apk|new-name.apk"
     message.reply_text(msg)
 
 def button(bot, update):
