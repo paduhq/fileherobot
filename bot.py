@@ -33,7 +33,7 @@ def msg_handler_f(client, message):
         txt_to_send="FOrmat link macam ni :- \n"+txt_pattern
         if "http" in msg_txt and '|' in msg_txt :
             prev_message=app.send_message(
-                text="Mantul woi, download jap .. ",
+                text="Mantul woi, download jap ... ",
                 chat_id=message.chat.id,
                 reply_to_message_id=message.message_id
             )
