@@ -30,7 +30,7 @@ def download_link(link,file_name,prev_message):
 def msg_handler_f(client, message):
         msg_txt=message.text
         txt_pattern="[FILE_LINK]|[FILE_NAME_WITH_EXTENSION]"
-        txt_to_send="FOrmat link macam ni :- \n"+txt_pattern
+        txt_to_send="Format link macam ni :- \n"+txt_pattern
         if "http" in msg_txt and '|' in msg_txt :
             prev_message=app.send_message(
                 text="Mantul woi, download jap ... ",
@@ -113,7 +113,7 @@ def progress_bar_f(current,total,prev_message,time1,direction):
 def start_msg_handler_f(client,message):
     msg="Halo bosskur! \n"
     msg=msg+"> Video(direct link) ke streamable video \n"
-    msg=msg+"> Direct link ke file Telegram. \n Format : [FILE_LINK]|[FILE_NAME_WITH_EXTENSION] \nContoh : http://direct-link.com/example-file.apk|new-name.apk"
+    msg=msg+"> Direct link ke file Telegram. \nFormat : [FILE_LINK]|[FILE_NAME_WITH_EXTENSION] \nContoh : http://direct-link.com/example-file.apk|new-name.apk"
     message.reply_text(msg)
 
 def button(bot, update):
