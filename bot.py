@@ -31,7 +31,7 @@ def msg_handler_f(client, message):
         msg_txt=message.text
         txt_pattern="You are not authorized to use the bot!"
         txt_to_send=""+txt_pattern
-        if "http" in msg_txt and '|' in msg_txt :
+        if "http" in msg_txt and ' | ' in msg_txt :
             prev_message=app.send_message(
                 text="Mantul woi, download jap ... ",
                 chat_id=message.chat.id,
